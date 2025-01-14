@@ -1,8 +1,9 @@
-package com.slippery.netbackend.service;
+package com.slippery.netbackend.service.impl;
 
 import com.slippery.netbackend.dto.UserDto;
 import com.slippery.netbackend.models.Users;
 import com.slippery.netbackend.repository.UserRepository;
+import com.slippery.netbackend.service.UserService;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
     private final UserRepository repository;
     private final PasswordEncoder passwordEncoder =new BCryptPasswordEncoder(12);
     private final AuthenticationManager authentication;
